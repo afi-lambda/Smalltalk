@@ -32,7 +32,12 @@ The nice thing about building things by the book is there are books to document 
 # Building and running
 
 # OS X
-You will need to install SDL 2.0.12 or later. You can download it from http://libsdl.org. Choose the development library `.dmg` and install. Then, go into the osx folder and type `make`. You should then be able to do:
+You will need to install SDL 2.0.12 or later. You can download it from http://libsdl.org. Choose the development library `.dmg` and install. Then, go into the osx folder and type:
+ `make -f MakefileRT`
+
+If you installed  SDL2 through a package manager, or built it yourself, so your system has  `sdl-config`  in your path you can simply do:
+`make`
+You should then be able to do:
 
 `./Smalltalk -directory ../files`
 
@@ -87,7 +92,7 @@ When running under Windows I ran into two problems. First, the mouse cursor woul
 The Smalltalk application takes a number of arguments. The only required argument is `-directory` _path_ which specifies the directory where the snapshot image can be found. Here is the complete list:
 |   Argument             |Meaning                          |Default                         |
 |---------------------|-------------------------------|-----------------------------|
-|-folder _path_         |Specifies the directory that contains the snapshot image, as well as the Smalltalk-80.sources and Smalltalk-80.changes files. Any other files in the directory will be accessible from Smalltalk-80 using the normal file/directory access methods.| **_required_**
+|-directory _path_         |Specifies the directory that contains the snapshot image, as well as the Smalltalk-80.sources and Smalltalk-80.changes files. Any other files in the directory will be accessible from Smalltalk-80 using the normal file/directory access methods.| **_required_**
 |-three          |Use the three button mapping | _two button scheme_     
 |-image          |Name of the snapshot file to use. | **snapshot**.**im**       
 |-cycles| Number of VM instructions to run per update loop            | **1800**   |
